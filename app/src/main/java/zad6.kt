@@ -38,15 +38,33 @@ fun main(){
     println("========================================")
     println("FILTROWANIE!")
 
+    val najlepszyMecz = tabelaLigi.maxByOrNull { it.ocena }
+    println("Mecz z najwyższą oceną: ")
+    println("${najlepszyMecz?.idMecz}.| ${najlepszyMecz?.nazwaGospodarz} ${najlepszyMecz?.punktyGospodarz} : ${najlepszyMecz?.nazwaGosc} ${najlepszyMecz?.punktyGosc}, Ocena: ${najlepszyMecz?.ocena}")
+    println("")
 
+    val najgorszyMecz = tabelaLigi.minByOrNull { it.ocena }
+    println("Mecz z najniższą oceną: ")
+    println("${najgorszyMecz?.idMecz}.| ${najgorszyMecz?.nazwaGospodarz} ${najgorszyMecz?.punktyGospodarz} : ${najgorszyMecz?.nazwaGosc} ${najgorszyMecz?.punktyGosc}, Ocena : ${najgorszyMecz?.ocena}")
+    println("")
+
+    val roznica = najlepszyMecz?.ocena!! - najgorszyMecz?.ocena!!
+    println("Różnica ocen między najlepszym a najgorszym meczem: ${roznica}")
+    println("========================================")
 
     println("Mecz powyżej jakiej oceny chcesz zobaczyć?")
     val ocena = readLine()!!.toInt()
-
     println("========================================")
+
     println("Mecze powyżej oceny $ocena:")
     tabelaLigi.filter { it.ocena > ocena }.forEach { println("${it.idMecz}.| ${it.nazwaGospodarz} ${it.punktyGospodarz} : ${it.nazwaGosc} ${it.punktyGosc}, Ocena: ${it.ocena}") }
     println("========================================")
+
+    val suma = tabelaLigi.sumOf { it.ocena }
+    println("Suma ocen wszystkich meczów: ${suma}")
+    println("")
+    println("========================================")
+
 
 
 }
