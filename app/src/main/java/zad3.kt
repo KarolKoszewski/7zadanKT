@@ -12,6 +12,10 @@ fun main() {
     println("Wszystkie książki:")
     books.forEach { println("${it.title} by ${it.author}, Year: ${it.year}") }
 
+
+
+
+
     println("Podaj autora książki: ")
     val author = readLine()!!.toString()
     println("Książki autora ${author}}")
@@ -22,5 +26,6 @@ fun main() {
     println("Książki wydane w ${y} roku:")
     books.filter { it.year == y }.forEach { println(it.title) }
 
-
+    println("Książki posortowane alfabetycznie:")
+    books.sortedBy { it.title }.forEach { println(it.title) }
 }
