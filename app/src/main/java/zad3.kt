@@ -17,4 +17,10 @@ fun main() {
     println("Książki autora ${author}}")
     books.filter { it.author == author }.forEach { println(it.title) }
 
+    println("Podaj rok wydania książki: ")
+    val y = readLine()!!.toInt()
+    println("Książki wydane w ${y} roku:")
+    books.filter { it.year == y }.forEach { println(it.title) }
+
+
 }
