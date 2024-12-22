@@ -36,7 +36,17 @@ fun main(){
     tabelaLigi.forEach { println("${it.idMecz}.| ${it.nazwaGospodarz} ${it.punktyGospodarz} : ${it.nazwaGosc} ${it.punktyGosc}, Ocena: ${it.ocena}") }
 
     println("========================================")
+    println("FILTROWANIE!")
 
-    println("czy chcesz dalej przeglądać mecze??")
+
+
+    println("Mecz powyżej jakiej oceny chcesz zobaczyć?")
+    val ocena = readLine()!!.toInt()
+
+    println("========================================")
+    println("Mecze powyżej oceny $ocena:")
+    tabelaLigi.filter { it.ocena > ocena }.forEach { println("${it.idMecz}.| ${it.nazwaGospodarz} ${it.punktyGospodarz} : ${it.nazwaGosc} ${it.punktyGosc}, Ocena: ${it.ocena}") }
+    println("========================================")
+
 
 }
