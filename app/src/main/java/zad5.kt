@@ -18,4 +18,7 @@ fun main(){
     krokomierz.zrobKrok()
     println("Liczba kroków: ${Krokomierz.liczbaKroków}")
 
+    Krokomierz.zresetujLicznik()
+    println("Liczba kroków po zresetowaniu: ${Krokomierz.liczbaKroków}")
+
 }
