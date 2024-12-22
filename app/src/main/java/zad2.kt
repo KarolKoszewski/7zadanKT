@@ -16,10 +16,16 @@ object Quotes{
         val randomQuote=Random.nextInt(quotes.size)
         return quotes[randomQuote]
     }
-
+    fun addQuote(quote:String){
+        quotes.add(quote)
+    }
 }
 fun main()
 {
-    println("Losowy cytat: ${Quotes.getRandomquote()}")
+    println("Losowy Cytat: ${Quotes.getRandomquote()}")
 
+    println("Dodawanie nowego cytatu")
+    Quotes.addQuote("sento wymyslisz ksywe dla otylego kuzyna macka? - Big mac")
+
+    println("Losowy cytat po dodaniu : ${Quotes.getRandomquote()}")
 }
